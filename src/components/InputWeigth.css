@@ -1,0 +1,23 @@
+.input {
+    height: 1.9rem;
+    padding: 0.3rem;
+    font-size: 1rem;
+    border: 2px solid transparent;
+    background: #dad2d2ea;
+    opacity: 0.8;
+    outline: none;
+    transition: 0.4s;
+    font-weight: 500;
+    border-radius: 0.3rem 0 0.3rem 0;
+}
+
+.input:hover {
+    opacity: 1;
+    border-color: #0081ff;
+    background: #eee;
+}
+
+.input:focus {
+    border-color: #0081ff;
+    background: #fff;
+}

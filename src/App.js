@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import Form from "./components/Form";
+import StartTestIMC from "./components/StartTestIMC";
+
+import "./App.css";
+import { useState } from "react";
+
+const stages = [
+    { id: 1, stageName: "start" },
+    { id: 2, stageName: "test" },
+];
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [page, setPage] = useState(stages[0].stageName);
+
+    const handleStartTest = () => {
+        setPage(stages[1].stageName);
+    };
+
+    return (
+        <>
+            {page === "start" && <StartTestIMC handleStartTest={handleStartTest} />}
+            {page === "test" && (
+                <div className="App">
+                    <h1>IMC Calculator</h1>
+                    <Form />
+                </div>
+            )}
+        </>
+    );
 }
 
 export default App;
