@@ -65,7 +65,7 @@ const Form = () => {
         <>
             <form className="formContainer" onSubmit={handleSubmit}>
                 <div className="formControl">
-                    <Label labelName="Altura:" setAttribute="height" />
+                    <Label labelName="Altura(CM):" setAttribute="height" />
                     <Input
                         placeholder="Digite sua altura..."
                         type="number"
