@@ -1,13 +1,14 @@
 import "./InputWeigth.css";
 
-const InputWeigth = ({ placeholder, type, name, handleWeigth }) => {
+const InputWeigth = ({ placeholder, type, name, setWeigth, value }) => {
     return (
         <input
-            onChange={(event) => handleWeigth(event.target.value)}
+            onChange={(event) => setWeigth(event.target.value)}
             className="input"
             type={type}
             placeholder={placeholder}
             name={name}
+            value={value}
         />
     );
 };

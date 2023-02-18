@@ -6,20 +6,13 @@ import Button from "./Button";
 import { useState } from "react";
 
 import "./Form.css";
+import InputWeigth from "./InputWeigth";
 
 const Form = () => {
-    const [height, setHeight] = useState(null);
-    const [weigth, setWeigth] = useState(null);
-    const [imcResult, setImcResult] = useState(null);
-    const [status, setStatus] = useState(null);
-
-    const handleHeight = (value) => {
-        setHeight(value);
-    };
-
-    const handleWeigth = (value) => {
-        setWeigth(value);
-    };
+    const [height, setHeight] = useState("");
+    const [weigth, setWeigth] = useState("");
+    const [imcResult, setImcResult] = useState();
+    const [status, setStatus] = useState();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -29,6 +22,8 @@ const Form = () => {
 
         setImcResult(result);
         checkStatus(result);
+        setHeight("");
+        setWeigth("");
     };
 
     const checkStatus = (value) => {
@@ -70,16 +65,18 @@ const Form = () => {
                         placeholder="Digite sua altura..."
                         type="number"
                         name="height"
-                        handleHeight={handleHeight}
+                        setHeight={setHeight}
+                        value={height}
                     />
                 </div>
                 <div className="formControl">
                     <Label labelName="Peso" setAttribute="weigth" />
-                    <InputWeight
+                    <InputWeigth
                         placeholder="Digite seu peso..."
                         type="number"
                         name="weigth"
-                        handleWeigth={handleWeigth}
+                        setWeigth={setWeigth}
+                        value={weigth}
                     />
                 </div>
                 <div className="buttonsContainer">
