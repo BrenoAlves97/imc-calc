@@ -31,25 +31,25 @@ const Form = () => {
             setStatus(`Parabéns! seu IMC está ${value.toFixed(2)}. Você está com o peso normal.`);
         } else if (value >= 25.0 && value <= 29.9) {
             setStatus(
-                `Sobrepeso! seu IMC está ${imcResult.toFixed(
+                `Sobrepeso! seu IMC está ${value.toFixed(
                     2
                 )}. Alguns quilos a mais já são suficientes para que algumas pessoas desenvolvam doenças associadas, como diabetes e hipertensão.`
             );
         } else if (value > 30.0 && value < 40.0) {
             setStatus(
-                `Obesidade! ${imcResult.toFixed(
+                `Obesidade! ${value.toFixed(
                     2
                 )}. O excesso de peso é fator de risco para desenvolvimento de outros problemas de saúde.`
             );
         } else if (value > 40.0) {
             setStatus(
-                `Obesidade grave! seu IMC está ${imcResult.toFixed(
+                `Obesidade grave! seu IMC está ${value.toFixed(
                     2
                 )}. Ao atingir este nivel de IMC, o risco de doenças associadas está entre alto e muito alto.`
             );
         } else if (value <= 18.5 && value > 0.0) {
             setStatus(
-                `Cuidado! Seu IMC está ${imcResult.toFixed(
+                `Cuidado! Seu IMC está ${value.toFixed(
                     2
                 )}. Estar abaixo do peso eleva risco de vida mais do que obesidade.`
             );
