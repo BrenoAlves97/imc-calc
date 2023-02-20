@@ -1,12 +1,10 @@
 import Label from "./Label";
 import Input from "./Input";
-import InputWeight from "./InputWeigth";
 import Button from "./Button";
 
 import { useState } from "react";
 
 import "./Form.css";
-import InputWeigth from "./InputWeigth";
 
 const Form = () => {
     const [height, setHeight] = useState("");
@@ -65,17 +63,17 @@ const Form = () => {
                         placeholder="Digite sua altura..."
                         type="number"
                         name="height"
-                        setHeight={setHeight}
+                        setValue={setHeight}
                         value={height}
                     />
                 </div>
                 <div className="formControl">
                     <Label labelName="Peso" setAttribute="weigth" />
-                    <InputWeigth
+                    <Input
                         placeholder="Digite seu peso..."
                         type="number"
                         name="weigth"
-                        setWeigth={setWeigth}
+                        setValue={setWeigth}
                         value={weigth}
                     />
                 </div>

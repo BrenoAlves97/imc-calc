@@ -1,9 +1,9 @@
 import "./Input.css";
 
-const Input = ({ placeholder, type, name, setHeight, value }) => {
+const Input = ({ placeholder, type, name, setValue, value }) => {
     return (
         <input
-            onChange={(event) => setHeight(event.target.value)}
+            onChange={(event) => setValue(event.target.value)}
             className="input"
             type={type}
             placeholder={placeholder}
