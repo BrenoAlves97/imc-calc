@@ -2,6 +2,7 @@ import Label from "./Label";
 import Input from "./Input";
 import Button from "./Button";
 
+import { useAlert } from "react-alert";
 import { useState } from "react";
 
 import "./Form.css";
@@ -12,16 +13,27 @@ const Form = () => {
     const [imcResult, setImcResult] = useState();
     const [status, setStatus] = useState();
 
+    const alert = useAlert();
+
     const handleSubmit = (event) => {
         event.preventDefault();
 
         const heightCM = height / 100;
         const result = weigth / (heightCM * heightCM);
 
-        setImcResult(result);
-        checkStatus(result);
-        setHeight("");
-        setWeigth("");
+        if (height.length === 0 || weigth.length === 0) {
+            alert.error("Por gentileza, preencha todos os campos antes de calcular!");
+            if (status.length > 0) {
+                setStatus("");
+            }
+            setHeight("");
+            setWeigth("");
+        } else {
+            setImcResult(result);
+            checkStatus(result);
+            setHeight("");
+            setWeigth("");
+        }
     };
 
     const checkStatus = (value) => {
